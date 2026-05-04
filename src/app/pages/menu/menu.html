@@ -1,0 +1,55 @@
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-danger">Il Nostro Menu</h1>
+    <p class="lead text-muted">Ingredienti freschi, amore per la terra e cottura a **485°C** nel nostro forno a legna.</p>
+    <div class="divider mx-auto bg-danger mb-4" style="height: 3px; width: 60px;"></div>
+  </div>
+
+  @for (categoria of categorie; track categoria) {
+    <div class="category-section mb-5">
+      <h2 class="mt-5 mb-4 text-dark fw-bold border-bottom pb-2 text-uppercase letter-spacing">{{ categoria }}</h2>
+      
+      <div class="row">
+        @for (pizza of getPizzePerCategoria(categoria); track pizza.nome) {
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm pizza-card">
+              
+              <img [src]="pizza.foto" [alt]="pizza.nome" class="card-img-top pizza-img">
+              
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title fw-bold mb-0 text-uppercase">{{ pizza.nome }}</h5>
+                  <span class="badge bg-success fs-6">{{ pizza.prezzo.toFixed(2) }} €</span>
+                </div>
+                
+                <p class="card-text text-muted small flex-grow-1">
+                  {{ pizza.ingredienti }}
+                </p>
+
+                <div class="mt-2">
+                  @if (pizza.tag) {
+                    <span class="badge" [ngClass]="{
+                      'bg-danger': pizza.tag === 'Piccante',
+                      'bg-warning text-dark': pizza.tag === 'Top' || pizza.tag === 'Consigliata',
+                      'bg-info': pizza.tag === 'Premium' || pizza.tag === 'Vegetariana' || pizza.tag === 'Tradizione'
+                    }">
+                      {{ pizza.tag }}
+                    </span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  <div class="alert alert-dark mt-5 text-center p-4 shadow-sm border-0">
+    <h4 class="fw-bold text-danger"><i class="bi bi-info-circle me-2"></i>Informazioni Importanti</h4>
+    <p class="mb-0">
+      Per allergie o intolleranze, chiedi pure al nostro personale di sala. <br> 
+      Tutti i nostri impasti sono stesi a mano e hanno una lievitazione minima di 48 ore a temperatura controllata.
+    </p>
+  </div>
+</div>

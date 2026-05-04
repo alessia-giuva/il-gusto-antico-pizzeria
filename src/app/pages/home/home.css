@@ -1,0 +1,39 @@
+.hero-section {
+  /* Puoi sostituire questo URL con la foto della tua pizzeria o una pizza vera */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+              url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=2070') no-repeat center center;
+  background-size: cover;
+  min-height: 80vh;
+}
+
+h1 {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.bi {
+  
+  transition: transform 0.3s ease;
+}
+
+.bi:hover {
+  transform: scale(1.2);
+}
+
+.card {
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.italic {
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.text-warning {
+  letter-spacing: 2px;
+}

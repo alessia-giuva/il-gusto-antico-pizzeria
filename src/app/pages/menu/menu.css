@@ -1,0 +1,21 @@
+.pizza-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid transparent !important;
+}
+
+.pizza-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  border-left: 5px solid #dc3545 !important;
+}
+
+.badge {
+  font-weight: 500;
+  padding: 0.5em 0.8em;
+}
+
+h2 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}

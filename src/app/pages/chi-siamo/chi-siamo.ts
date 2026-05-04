@@ -1,0 +1,11 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+@Component({
+  selector: 'app-chi-siamo',
+  imports: [CommonModule],
+  templateUrl: './chi-siamo.html',
+  styleUrl: './chi-siamo.css',
+})
+export class ChiSiamo {
+
+}

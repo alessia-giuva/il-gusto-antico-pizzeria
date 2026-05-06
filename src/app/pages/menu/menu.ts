@@ -5,11 +5,10 @@ import { CommonModule } from '@angular/common';
   selector: 'app-menu',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './menu.html', // Assicurati che il nome file coincida (menu.html o menu.component.html)
+  templateUrl: './menu.html', 
   styleUrl: './menu.css'
 })
-export class MenuComponent { // <-- Il nome della classe deve essere MenuComponent
-  // La variabile deve essere definita QUI dentro
+export class MenuComponent { 
   pizze = [
     // Classiche
     { nome: 'Margherita',

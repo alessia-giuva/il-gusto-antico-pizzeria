@@ -28,16 +28,12 @@
  .nav-link {
     margin-left: 0 !important;
     padding: 15px 0;
-    /* Questo assicura che i link siano ben cliccabili su mobile */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
  .navbar-collapse {
-    /* Rimosso position: absolute per attivare l'effetto spinta */
     position: relative; 
     width: 100%;
-    /* Un piccolo margine per staccarsi dal logo quando si apre */
     margin-top: 10px;
-    /* Opzionale: un bordo leggero per separare il menu dalla hero */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -46,7 +42,6 @@
     visibility: visible;
   }
 
-  /* Rimuoviamo l'animazione 'collapsing' di Bootstrap che crea il ritardo */
   .collapsing {
     transition: height 0.35s ease !important;
     display: block !important;
@@ -62,7 +57,7 @@
     font-size: 25px;
   }
 }
-/* HOME HERO: Assicurati che non abbia margini negativi */
+
 
 .hero-section {
   transition: margin-top 0.3s ease-in-out;
@@ -74,7 +69,7 @@
   height: 60px;
   bottom: 40px;
   right: 40px;
-  background-color: #25d366; /* Verde ufficiale WhatsApp */
+  background-color: #25d366; 
   color: #fff !important;
   border-radius: 50px;
   text-align: center;
@@ -87,7 +82,7 @@
 }
 
 .whatsapp-float:hover {
-  background-color: #128c7e; /* Verde più scuro al passaggio del mouse */
+  background-color: #128c7e; 
   transform: scale(1.1);
   color: #fff;
 }

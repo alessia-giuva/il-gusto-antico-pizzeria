@@ -1,21 +1,91 @@
+/* Layout della Card */
 .pizza-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 5px solid transparent !important;
+  border-radius: 15px !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: #ffffff;
+  border-left: 0 solid #dc3545 !important;
 }
 
 .pizza-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  transform: translateX(5px); /* Invece di salire, slitta leggermente a destra */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important;
   border-left: 5px solid #dc3545 !important;
 }
 
-.badge {
-  font-weight: 500;
-  padding: 0.5em 0.8em;
+/* Gestione Immagine 200x200 */
+.pizza-img-wrapper {
+  width: 90px;  /* La visualizziamo a 90px così su 200px di originale è nitidissima */
+  height: 90px;
+  position: relative;
 }
 
-h2 {
-  letter-spacing: 2px;
+.pizza-img-round {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* La rende circolare, stile bollino gourmet */
+  border: 2px solid #f8f9fa;
+  transition: transform 0.3s ease;
+}
+
+.pizza-card:hover .pizza-img-round {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Tipografia */
+.pizza-title {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.italic-ingredients {
+  font-style: italic;
+  font-size: 0.85rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Taglia il testo dopo 2 righe per uniformità */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tag-mini {
+  font-size: 0.6rem;
+  padding: 3px 6px;
+  border-radius: 10px;
   text-transform: uppercase;
-  font-size: 1.5rem;
+}
+
+/* Banner finale */
+.info-banner {
+  border-left: 5px solid #dc3545;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Adattamento Mobile */
+@media (max-width: 576px) {
+  .pizza-img-wrapper {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .pizza-title {
+    font-size: 0.9rem;
+  }
+  
+  .info-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .icon-circle {
+    margin: 0 0 15px 0 !important;
+  }
 }

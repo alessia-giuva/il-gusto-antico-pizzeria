@@ -1,42 +1,51 @@
-<div class="container py-5">
-  <div class="text-center mb-5">
-    <h1 class="display-4 fw-bold text-danger">Il Nostro Menu</h1>
-    <p class="lead text-muted">Ingredienti freschi, amore per la terra e cottura a **485°C** nel nostro forno a legna.</p>
-    <div class="divider mx-auto bg-danger mb-4" style="height: 3px; width: 60px;"></div>
+<div class="container py-5 mt-4">
+  <!-- Header del Menu -->
+  <div class="text-center mb-5 animate__animated animate__fadeIn">
+    <h1 class="display-3 fw-bold text-dark mb-2">Il Nostro <span class="text-danger">Menu</span></h1>
+    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+      Ingredienti selezionati, amore per la terra e cottura a **485°C** nel nostro forno a legna.
+    </p>
+    <div class="divider mx-auto bg-danger mt-3" style="height: 4px; width: 80px; border-radius: 2px;"></div>
   </div>
 
   @for (categoria of categorie; track categoria) {
-    <div class="category-section mb-5">
-      <h2 class="mt-5 mb-4 text-dark fw-bold border-bottom pb-2 text-uppercase letter-spacing">{{ categoria }}</h2>
+    <div class="category-section mb-5 animate__animated animate__fadeInUp">
+      <!-- Titolo Categoria -->
+      <div class="d-flex align-items-center mb-4 border-bottom pb-3">
+        <h2 class="text-dark fw-bold text-uppercase m-0 letter-spacing" style="letter-spacing: 2px;">{{ categoria }}</h2>
+        <span class="ms-3 badge rounded-pill bg-light text-dark border shadow-sm small">
+          {{ getPizzePerCategoria(categoria).length }} specialità
+        </span>
+      </div>
       
-      <div class="row">
+      <div class="row g-4">
         @for (pizza of getPizzePerCategoria(categoria); track pizza.nome) {
-          <div class="col-md-6 col-lg-4 mb-4">
+          <div class="col-md-6 col-xl-4">
             <div class="card h-100 border-0 shadow-sm pizza-card">
-              
-              <img [src]="pizza.foto" [alt]="pizza.nome" class="card-img-top pizza-img">
-              
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start mb-2">
-                  <h5 class="card-title fw-bold mb-0 text-uppercase">{{ pizza.nome }}</h5>
-                  <span class="badge bg-success fs-6">{{ pizza.prezzo.toFixed(2) }} €</span>
-                </div>
+              <div class="card-body p-3 d-flex align-items-center">
                 
-                <p class="card-text text-muted small flex-grow-1">
-                  {{ pizza.ingredienti }}
-                </p>
-
-                <div class="mt-2">
+                <!-- Contenitore Immagine 200x200 (senza sgranare) -->
+                <div class="pizza-img-wrapper flex-shrink-0">
+                  <img [src]="pizza.foto" [alt]="pizza.nome" class="pizza-img-round shadow-sm">
                   @if (pizza.tag) {
-                    <span class="badge" [ngClass]="{
-                      'bg-danger': pizza.tag === 'Piccante',
-                      'bg-warning text-dark': pizza.tag === 'Top' || pizza.tag === 'Consigliata',
-                      'bg-info': pizza.tag === 'Premium' || pizza.tag === 'Vegetariana' || pizza.tag === 'Tradizione'
-                    }">
+                    <span class="badge position-absolute top-0 start-50 translate-middle bg-danger tag-mini">
                       {{ pizza.tag }}
                     </span>
                   }
                 </div>
+
+                <!-- Testi e Prezzo -->
+                <div class="ms-3 flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start mb-1">
+                    <h5 class="fw-bold mb-0 text-uppercase pizza-title">{{ pizza.nome }}</h5>
+                    <span class="text-danger fw-bold">{{ pizza.prezzo.toFixed(2) }}€</span>
+                  </div>
+                  
+                  <p class="card-text text-muted small mb-0 lh-sm italic-ingredients">
+                    {{ pizza.ingredienti }}
+                  </p>
+                </div>
+
               </div>
             </div>
           </div>
@@ -45,11 +54,16 @@
     </div>
   }
 
-  <div class="alert alert-dark mt-5 text-center p-4 shadow-sm border-0">
-    <h4 class="fw-bold text-danger"><i class="bi bi-info-circle me-2"></i>Informazioni Importanti</h4>
-    <p class="mb-0">
-      Per allergie o intolleranze, chiedi pure al nostro personale di sala. <br> 
-      Tutti i nostri impasti sono stesi a mano e hanno una lievitazione minima di 48 ore a temperatura controllata.
-    </p>
+  <!-- Banner Info Intolleranze -->
+  <div class="info-banner rounded-4 shadow-sm p-4 mt-5 d-flex align-items-center bg-light">
+    <div class="icon-circle bg-danger text-white me-4">
+      <i class="bi bi-info-circle fs-3"></i>
+    </div>
+    <div>
+      <h5 class="fw-bold mb-1 text-dark">Informazioni Importanti</h5>
+      <p class="mb-0 text-muted small">
+        Per allergie o intolleranze, chiedi al nostro personale. Lievitazione minima di 48 ore a temperatura controllata.
+      </p>
+    </div>
   </div>
 </div>

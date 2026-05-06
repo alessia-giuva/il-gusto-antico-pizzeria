@@ -2,13 +2,92 @@
   font-weight: 500;
   transition: color 0.3s ease;
   margin-left: 15px;
+  color: rgba(255, 255, 255, 0.8) !important; /* Colore bianco spento di base */
 }
 
 .nav-link.active {
-  color: #dc3545 !important; /* Rosso come il logo */
-  border-bottom: 2px solid #dc3545;
+  color: #dc3545 !important; /* Diventa rosso */
+  border-bottom: none !important; /* RIMOSSA LA LINEA ROSSA */
 }
 
 .navbar-brand {
   letter-spacing: 1px;
+}
+.nav-link:hover {
+  color: #dc3545 !important;
+}
+
+.navbar {
+  min-height: 70px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+@media (max-width: 991px) {
+ .nav-link {
+    margin-left: 0 !important;
+    padding: 15px 0;
+    /* Questo assicura che i link siano ben cliccabili su mobile */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+ .navbar-collapse {
+    /* Rimosso position: absolute per attivare l'effetto spinta */
+    position: relative; 
+    width: 100%;
+    /* Un piccolo margine per staccarsi dal logo quando si apre */
+    margin-top: 10px;
+    /* Opzionale: un bordo leggero per separare il menu dalla hero */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-collapse.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Rimuoviamo l'animazione 'collapsing' di Bootstrap che crea il ritardo */
+  .collapsing {
+    transition: height 0.35s ease !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 25px;
+  }
+}
+/* HOME HERO: Assicurati che non abbia margini negativi */
+
+.hero-section {
+  transition: margin-top 0.3s ease-in-out;
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366; /* Verde ufficiale WhatsApp */
+  color: #fff !important;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e; /* Verde più scuro al passaggio del mouse */
+  transform: scale(1.1);
+  color: #fff;
 }

@@ -1,23 +1,25 @@
 /* --- CONFIGURAZIONE NAVBAR PIZZERIA --- */
 .nav-custom-pizza {
-  background-color: rgba(26, 26, 26, 0.98) !important; /* Grigio antracite del footer */
+  background-color: rgba(26, 26, 26, 0.98) !important; 
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid #c04000; /* Linea mattone come nel footer */
+  border-bottom: 2px solid #c04000; 
   min-height: 75px;
   transition: all 0.3s ease;
 }
 
 /* Brand e Titolo */
 .navbar-brand {
-  letter-spacing: 2px;
-  font-size: 1.4rem;
+  display: flex !important;
+  align-items: center;
+  white-space: nowrap; 
+  margin-right: 10px;  
+  flex-shrink: 1;      
 }
-
 .text-pizza-gold {
-  color: #e09d37 !important; /* Oro caldo del footer */
+  color: #e09d37 !important; 
 }
 
-/* Animazione fiamma */
+
 .pulse-fire {
   animation: fire-glow 2s infinite;
 }
@@ -28,7 +30,7 @@
   100% { opacity: 0.8; transform: scale(1); }
 }
 
-/* Link della Navbar */
+
 .custom-link {
   font-weight: 500;
   text-transform: uppercase;
@@ -36,15 +38,15 @@
   letter-spacing: 1.5px;
   transition: all 0.3s ease;
   margin-left: 15px;
-  color: rgba(252, 250, 247, 0.8) !important; /* Cream del footer */
+  color: rgba(252, 250, 247, 0.8) !important; 
   position: relative;
 }
 
 .custom-link:hover, .custom-link.active {
-  color: #e09d37 !important; /* Diventa Oro Caldo */
+  color: #e09d37 !important; 
 }
 
-/* Sottolinea elegante per il link attivo */
+
 .custom-link.active::after {
   content: '';
   position: absolute;
@@ -55,28 +57,27 @@
   background-color: #e09d37;
 }
 
-/* --- MOBILE RESPONSIVE --- */
+
 @media (max-width: 991px) {
-  .nav-custom-pizza {
-    background-color: #1a1a1a !important;
+ 
+  .navbar-brand {
+    font-size: 1.1rem; 
   }
-
-  .custom-link {
-    margin-left: 0 !important;
-    padding: 18px 0;
-    text-align: center;
-    border-bottom: 1px solid rgba(224, 157, 55, 0.1);
-  }
-
-  .navbar-collapse {
-    position: relative; 
-    width: 100%;
-    margin-top: 10px;
-    border-top: 1px solid #c04000;
+  
+  .logo-navbar, .bi-fire {
+    font-size: 1.2rem;
   }
 }
 
-/* WhatsApp Float (Mantengo il tuo responsive) */
+
+@media (max-width: 360px) {
+  .navbar-brand {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+}
+
+
 @media (max-width: 768px) {
   .whatsapp-float {
     width: 55px;
@@ -116,29 +117,29 @@
   color: #fff;
 }
 
-/* --- TEMA PIZZERIA PREMIUM --- */
+
 .footer-pizza {
-    background-color: #1a1a1a !important; /* Grigio antracite quasi nero */
-    border-top: 3px solid #c04000; /* Linea superiore color mattone */
+    background-color: #1a1a1a !important; 
+    border-top: 3px solid #c04000; 
 }
 
 .text-pizza-gold {
-    color: #e09d37 !important; /* Oro caldo (crosta di pizza) */
+    color: #e09d37 !important;
 }
 
 .border-pizza-gold {
     border-color: #e09d37 !important;
 }
 
-/* Badge Speciale */
+
 .badge-pizza {
-    background-color: #c04000; /* Rosso mattone del forno */
+    background-color: #c04000; 
     color: white;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
-/* Social Icons */
+
 .footer-social a {
     color: white;
     font-size: 1.3rem;
@@ -150,16 +151,15 @@
     transform: translateY(-3px);
 }
 
-/* Link Privacy */
+
 .hover-pizza-gold:hover {
     color: #e09d37 !important;
 }
 
-/* Tipografia */
-.serif-title {
-    font-family: 'Bodoni Moda', serif;
-}
 
+.serif-title {
+  white-space: nowrap;
+}
 .tracking-widest {
     letter-spacing: 2px;
 }
@@ -168,7 +168,7 @@
     font-size: 0.75rem;
 }
 
-/* Separatore */
+
 hr.border-secondary {
     border-color: rgba(224, 157, 55, 0.2) !important;
 }

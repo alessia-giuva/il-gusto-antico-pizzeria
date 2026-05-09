@@ -1,59 +1,16 @@
-# IlGustoAntico
+# 🍕 Il Gusto Antico - Pizzeria
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0-next.2.
+Benvenuti nel repository ufficiale de **Il Gusto Antico**, una moderna Web Application dedicata a una pizzeria tradizionale napoletana. Il sito è progettato per offrire un'esperienza utente fluida, con un focus sulla qualità degli ingredienti e la facilità di contatto.
 
-## Development server
+## 🌐 Demo Live
+Puoi visualizzare il sito in funzione qui: 
+[👉 Clicca qui per vedere il sito](https://alessia-giuva.github.io/il-gusto-antico-pizzeria/) 
 
-To start a local development server, run:
+## 🚀 Caratteristiche Principali
+*   **Menu Interattivo:** Suddiviso per categorie (Classiche, Speciali, Dessert) con immagini nitide e tag per le specialità.
+*   **Design Responsivo:** Ottimizzato per smartphone, tablet e desktop.
+*   **Prenotazione Rapida:** Integrazione diretta con WhatsApp per ordini e prenotazioni.
+*   **Contatti & Mappa:** Pagina dedicata con gli orari di apertura e mappa interattiva di Foggia.
+*   **Navbar Intuitiva:** Navigazione fluida con evidenziazione della pagina corrente.
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Realizzato con ❤️ da [Alessia Giuva]

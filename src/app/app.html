@@ -1,28 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm nav-custom-pizza">
   <div class="container d-flex justify-content-between align-items-center flex-wrap">
-    <a class="navbar-brand fw-bold text-danger" routerLink="/">
-      <i class="bi bi-fire me-2"></i>IL GUSTO ANTICO
+    <a class="navbar-brand fw-bold d-flex align-items-center" routerLink="/">
+      <i class="bi bi-fire me-2 text-pizza-gold pulse-fire"></i>
+      <span class="serif-title">IL GUSTO <span class="text-pizza-gold">ANTICO</span></span>
     </a>
-
-    <!-- Il Bottone delle 3 lineette -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Il Menu che si espande -->
     <div class="collapse navbar-collapse" id="navbarNav" #nav>
-      <ul class="navbar-nav ms-auto pt-3 pb-2">
+      <ul class="navbar-nav ms-auto pt-3 pb-2 pt-lg-0 pb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="nav.classList.remove('show')">Home</a>
+          <a class="nav-link custom-link" routerLink="/" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}" (click)="nav.classList.remove('show')">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/chi-siamo" routerLinkActive="active" (click)="nav.classList.remove('show')">Chi Siamo</a>
+          <a class="nav-link custom-link" routerLink="/chi-siamo" routerLinkActive="active"
+            (click)="nav.classList.remove('show')">Chi Siamo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/menu" routerLinkActive="active" (click)="nav.classList.remove('show')">Menu</a>
+          <a class="nav-link custom-link" routerLink="/menu" routerLinkActive="active"
+            (click)="nav.classList.remove('show')">Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contatti" routerLinkActive="active" (click)="nav.classList.remove('show')">Contatti</a>
+          <a class="nav-link custom-link" routerLink="/contatti" routerLinkActive="active"
+            (click)="nav.classList.remove('show')">Contatti</a>
         </li>
       </ul>
     </div>
@@ -33,14 +34,86 @@
   <router-outlet></router-outlet>
 </main>
 
-<footer class="bg-dark text-white text-center py-4 mt-auto">
+<footer class="footer-pizza pt-5 pb-3">
   <div class="container">
-    <p class="mb-0">&copy; 2026 Il Gusto Antico - La vera pizza a 480°C</p>
-    <small class="text-muted">Passione e Tradizione Napoletana</small>
+    <div class="row g-4 text-white">
+      <!-- Colonna 1: Brand e Bio -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="text-gold fw-bold mb-3 ">IL GUSTO <span class="text-pizza-gold">ANTICO</span></h4>
+        <p class="mb-0">
+          Pizzeria Artigianale con forno a legna.
+          L'impasto a lunga lievitazione incontra la passione per le materie prime locali per una pizza indimenticabile
+          a Foggia.
+        </p>
+        <p class="mb-0 opacity-75 small ">
+        </p>
+        <div class="footer-social d-flex gap-3 mt-4">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+      <!-- Colonna 2: Orari (Dati Personalizzati) -->
+      <div class="col-lg-4 col-md-6">
+        <h5
+          class="text-pizza-gold fw-bold mb-4 border-start border-pizza-gold border-3 ps-3 text-uppercase small tracking-widest">
+          Orari di Apertura</h5>
+        <ul class="list-unstyled p-0 m-0 small">
+          <li class="d-flex justify-content-between mb-2">
+            <span>Mar - Ven:</span>
+            <span class="fw-bold">19:00 - 23:30</span>
+          </li>
+          <li class="d-flex justify-content-between mb-2">
+            <span>Sab - Dom:</span>
+            <span class="fw-bold">19:00 - 00:30</span>
+          </li>
+          <li class="d-flex justify-content-between mb-2 border-bottom border-secondary pb-2">
+            <span>Lunedì:</span>
+            <span class="fw-bold text-pizza-gold">Chiuso</span>
+          </li>
+          <li class="mt-3">
+            <span class="badge badge-pizza px-3 py-2 rounded-pill">
+              <i class="bi bi-fire me-2"></i>Forno a Legna Acceso
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Colonna 3: Contatti (Dati Personalizzati) -->
+      <div class="col-lg-4 col-md-12">
+        <h5
+          class="text-pizza-gold fw-bold mb-4 border-start border-pizza-gold border-3 ps-3 text-uppercase small tracking-widest">
+          Contatti & Asporto</h5>
+        <ul class="list-unstyled">
+          <li class="mb-3 d-flex align-items-start">
+            <i class="bi bi-geo-alt-fill text-pizza-gold me-3 fs-5"></i>
+            <span class="small">Via del Forno, 45<br>71121 Foggia (FG)</span>
+          </li>
+          <li class="mb-3 d-flex align-items-center">
+            <i class="bi bi-telephone-fill text-pizza-gold me-3 fs-5"></i>
+            <span class="small">+39 385 517 7443</span>
+          </li>
+          <li class="mb-3 d-flex align-items-center">
+            <i class="bi bi-whatsapp text-pizza-gold me-3 fs-5"></i>
+            <span class="small">Sempre attivi per asporto</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="mt-5 mb-4 border-secondary opacity-25">
+
+    <!-- Barra Inferiore -->
+    <div class="row">
+      <!-- Usiamo col-12 per occupare tutto lo spazio e text-center per centrare -->
+      <div class="col-12 text-center">
+        <p class="text-white small mb-0 opacity-75">&copy; 2026 L'Ombra del Basilico - Pizzeria Artigianale.</p>
+      </div>
+    </div>
   </div>
 </footer>
 
 
-<a href="https://wa.me/390881123456" class="whatsapp-float shadow-lg" target="_blank">
+<a href="https://wa.me/393855177443" class="whatsapp-float shadow-lg" target="_blank">
   <i class="bi bi-whatsapp"></i>
 </a>
